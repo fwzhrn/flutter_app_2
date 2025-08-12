@@ -30,23 +30,43 @@ class LoginPageState extends State<LoginPage> {
                   ),
                 ],
               ),
-              child: Column(
-                children: [
-                  FlutterLogo(size: 100,),
-                  TextFormField(
-                    decoration: InputDecoration(
-                      labelText: 'Username',
-                      hintText: 'Enter your username',
-                      border: OutlineInputBorder(),
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Column(
+                  children: [
+                    FlutterLogo(size: 100,),
+                    SizedBox(height: 20),
+                    TextFormField(
+                      decoration: InputDecoration(
+                        label: Text('Username'),
+                        // labelText: 'Username',
+                        hintText: 'Enter your username',
+                        border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+                      ),
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Please enter your username';
+                        }
+                        return null;
+                      },
                     ),
-                    validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return 'Please enter your username';
-                      }
-                      return null;
-                    },
-                  )
-                ],
+                    SizedBox(height: 20),
+                    TextFormField(
+                      decoration: InputDecoration(
+                        label: Text('Password'),
+                        // labelText: 'Username',
+                        hintText: 'Enter your password',
+                        border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+                      ),
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Please enter your password';
+                        }
+                        return null;
+                      },
+                    )
+                  ],
+                ),
               ),
             )
           ],
