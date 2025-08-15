@@ -1,0 +1,20 @@
+import 'package:flutter/material.dart';
+
+class ProfilePage extends StatelessWidget {
+  const ProfilePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Column(
+        children: [
+          const Expanded(flex: 2, child: _TopPortion()),
+          Expanded(flex: 3,
+          child: Padding(
+            padding: const EdgeInsets.all(8.0)
+            ),)
+        ],
+      ),
+    )
+  }
+}
